@@ -5,33 +5,43 @@ public class SavingsAccount {
         balance = initialBalance;
     }
 
+    //blance checking method :
+    public void checkBalance(){
+        System.out.println("Hello!");
+        System.out.println("Your balance is: " + balance);
+    }
+
+    //withdraw method : 
+    public void withdraw(){
+        int afterWithdraw = balance - 300;
+        balance = afterWithdraw;
+        System.out.println("You just withdraw: " + 300); 
+    }
+
+    // Deposit method : 
+    public void deposit(){
+        int afterDeposit = balance + 600;
+        balance = afterDeposit;
+        System.out.println("You just deposit: " + 600); 
+    }
 
     public static void main(String[] args){
         SavingsAccount savings = new SavingsAccount(2000);
         
-        //Check balance :
-        System.out.println("Hello!");
-        System.out.println("Your balance is: " + savings.balance);
-        
+        //intial balacne check
+        System.out.println("Your current initial balance is: " + savings.balance);
 
-        //Withdrawing :
-        int afterWithdraw = savings.balance - 300;
-        savings.balance = afterWithdraw;
-        System.out.println("You just withdraw: " + 300); 
+        System.out.println("------------------------------------------");
 
-        //Check balance :
-        System.out.println("Hello!");
-        System.out.println("Your balance is: " + savings.balance);
-        
+        // After deposit : 
+        savings.deposit();
+        savings.checkBalance();
 
-        //Deposit :
-        int afterDeposit = savings.balance + 600;
-        savings.balance = afterDeposit;
-        System.out.println("You just deposit: " + 600); 
+        System.out.println("------------------------------------------");
 
-        //Check balance :
-        System.out.println("Hello!");
-        System.out.println("Your balance is: " + savings.balance);
-        
+        // After withdraw :
+        savings.withdraw();
+        savings.checkBalance();
+
     }
 }
